@@ -27,4 +27,4 @@ To bypass the CSP and achieve XSS it's possible to exploit a Firefox [bug](https
 
 ## Exploit
 
-[here](m0lecon-2026-teaser/securetextbin/solution)
+[here](/m0lecon-2026-teaser/securetextbin/solution)
