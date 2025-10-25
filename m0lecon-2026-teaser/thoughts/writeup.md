@@ -27,4 +27,4 @@ if the tab crashes when the condition is matched, the redirect doesn't happen.
 
 ## Exploit
 
-[here](m0lecon-2026-teaser/thoughts/solve)
+[here](/m0lecon-2026-teaser/thoughts/solve)
