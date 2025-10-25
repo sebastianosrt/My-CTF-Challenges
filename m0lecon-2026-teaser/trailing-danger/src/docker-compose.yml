@@ -1,0 +1,16 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: backend
+
+  proxy:
+    build:
+      args:
+        APP_REPO: https://github.com/lighttpd/lighttpd1.4
+        APP_VERSION: 743d0bcda984e6104dd9bb6558d994c61d839466
+      context: ./proxy
+    depends_on:
+      - backend
+    ports:
+      - "3002:80"

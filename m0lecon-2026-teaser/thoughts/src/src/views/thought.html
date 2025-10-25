@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{thought.title}}</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .back-link {
+            display: inline-block;
+            color: #667eea;
+            text-decoration: none;
+            margin-bottom: 20px;
+            padding: 8px 16px;
+            border: 2px solid #667eea;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        .thought-header {
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .thought-title {
+            font-size: 2.2em;
+            color: #667eea;
+            margin: 0 0 10px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .thought-meta {
+            color: #666;
+            font-size: 0.9em;
+            background: #f8f9fa;
+            padding: 8px 12px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+        
+        .thought-content {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            line-height: 1.6;
+            font-size: 1.1em;
+            color: #495057;
+            border-left: 4px solid #667eea;
+            white-space: pre-wrap;
+        }
+        
+        .thought-id {
+            text-align: right;
+            margin-top: 20px;
+            color: #999;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">← Back to All Thoughts</a>
+        
+        <div class="thought-header">
+            <h1 class="thought-title">{{thought.title}}</h1>
+            <div class="thought-meta">📅 Created: {{thought.created}}</div>
+        </div>
+        
+        <div class="thought-content">{{{thought.content}}}</div>
+        
+        <div class="thought-id">ID: {{thought.id}}</div>
+    </div>
+</body>
+</html>

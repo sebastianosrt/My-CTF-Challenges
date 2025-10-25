@@ -1,0 +1,18 @@
+{
+  "name": "thoughts",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "dev": "node main.js"
+  },
+  "dependencies": {
+    "@hapi/hapi": "^21.4.3",
+    "@hapi/inert": "^7.1.0",
+    "@hapi/vision": "^7.0.3",
+    "handlebars": "^4.7.8",
+    "redis": "^5.8.2",
+    "sqlite3": "^5.1.7"
+  },
+  "license": "MIT"
+}

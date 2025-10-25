@@ -1,0 +1,38 @@
+services:
+  thoughts:
+    build: ./src
+    ports:
+      - "3000:3000"
+    environment:
+      - FLAG=ptm{test_flag_12345}
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - redis
+      - bot
+    volumes:
+      - ./certs:/certs:ro
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+
+  bot:
+    build: ./bot
+    ports:
+      - "55555:55555"
+    environment:
+     - BASE_URL=https://thoughts:3000
+     - ENVIRONMENT=development
+     - REDIS_URL=redis://redis:6379
+     - MAX_CONCURRENCY=1
+    depends_on:
+      - redis
+    restart: unless-stopped
+    read_only: true
+    cap_drop:
+      - all
+    cap_add:
+      - CAP_SETGID
+      - CAP_SETUID
+    tmpfs:
+      - /tmp:mode=1733,exec

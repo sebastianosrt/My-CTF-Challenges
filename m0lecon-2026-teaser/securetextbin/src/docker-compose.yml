@@ -1,0 +1,27 @@
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "1337:1337"
+    depends_on:
+      - backend
+    environment:
+      - FLAG=flag{test_flag_0a1d}
+
+  backend:
+    build: ./backend
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_NAME=filestore
+      - DB_USER=root
+      - DB_PASS=rootpassword
+
+  db:
+    image: mysql:8.0
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpassword
+      - MYSQL_DATABASE=filestore
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/1-schema.sql:ro

