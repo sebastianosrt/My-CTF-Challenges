@@ -53,7 +53,7 @@ it returns an 'ambiguous' connection header: `Connection: close, upgrade, te`.
 
 *This also bypasses the configuration restrictions as it should be configured with `proxy.header += ( "upgrade" => "enable" )` to support upgrade*
 
-The **ambiguous connection header sent by the proxy won't be interpreted as `close` by gunicorn, leaving the connection open and enabling request smuggling**.
+The **ambiguous connection header sent by the proxy [won't be interpreted as `close` by gunicorn](https://github.com/benoitc/gunicorn/blob/23.0.0/gunicorn/http/message.py#L229-L240), leaving the connection open and enabling request smuggling**.
 
 ### 3. Command injection via IPv6 zone identifiers
 
