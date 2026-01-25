@@ -9,6 +9,7 @@ A repository for CTF challenges I created.
 ## m0leCon CTF 2026 Teaser
 
 Links: [CTFtime](https://ctftime.org/event/2946) / [Website](https://ctf.m0lecon.it/)
+Weight: 100/100
 
 |Challenge|Category|Solved|Keywords|
 |:-:|:-:|:-:|:-:|
