@@ -24,6 +24,6 @@ Links: [CTFtime](https://ctftime.org/event/3196) / [Website](https://finals.m0le
 
 |Challenge|Category|Solved|
 |:-:|:-:|:-:|
-|[cherrypy](m0lecon-2026-finals/cherrypy)|web|9/10|
-|[SOP Calendar](m0lecon-2026-finals/sop-calendar)|web|4/10|
-|[CMSlop](m0lecon-2026-finals/CMSlop)|web|1/10|
+|[cherrypy](m0lecon-2026-finals/cherrypy)|web|?/10|
+|[SOP Calendar](m0lecon-2026-finals/sop-calendar)|web|?/10|
+|[CMSlop](m0lecon-2026-finals/CMSlop)|web|?/10|
