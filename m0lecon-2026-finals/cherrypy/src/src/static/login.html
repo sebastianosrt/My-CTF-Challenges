@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CherryPi Login</title>
+    <link rel="stylesheet" href="/static/login.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <section class="panel">
+        <div class="brand">
+          <div class="logo" aria-hidden="true">CP</div>
+          <div>
+            <div class="title">CherryPi</div>
+            <div class="subtitle">Sign in to access the dashboard</div>
+          </div>
+        </div>
+
+        <form id="loginForm" class="form" autocomplete="off">
+          <label>
+            <span>Username</span>
+            <input id="username" type="text" placeholder="admin" required />
+          </label>
+          <label>
+            <span>Password</span>
+            <input id="password" type="password" placeholder="********" required />
+          </label>
+          <button class="btn" type="submit">Sign In</button>
+          <div class="error" id="error"></div>
+        </form>
+
+      </section>
+    </main>
+
+    <script src="/public/login.js"></script>
+  </body>
+</html>

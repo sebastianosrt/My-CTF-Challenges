@@ -1,0 +1,26 @@
+worker_processes 1;
+
+events {
+    worker_connections 256;
+}
+
+http {
+    server_names_hash_bucket_size 128;
+
+    upstream chall {
+        server chall:3000;
+    }
+
+    server {
+        listen 80 default_server;
+        server_name ${SECRET}.app.chall.tld;
+
+        location / {
+            proxy_pass http://chall;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+        }
+    }
+}

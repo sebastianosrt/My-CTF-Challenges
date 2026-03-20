@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script nonce="{{nonce}}">
+        let params = new URLSearchParams(location.search);
+
+        function isBadKey(key) {
+            const bad = new Set(['location', 'opener', 'innerHTML', '__proto__']);
+            return bad.has(key);
+        }
+
+        function setConfig(key, value) {
+            let current = window;
+            const keyParts = key.split('.');
+            if (keyParts.length < 3 && value.length <= 20) {
+                for (let i = 0; i < keyParts.length; i++) {
+                    const keyPart = keyParts[i];
+                    if (isBadKey(keyPart)) return;
+    
+                    if (i === keyParts.length - 1) {
+                        current[keyPart] = value;
+                    } else {    
+                        current = current[keyPart];
+                    }
+                }
+            }
+        }
+
+        if (params.size > 0) {
+            const [k, v] = params.entries().next().value;
+            setConfig(k, v);
+        }
+    </script>
+</body>
+
+</html>

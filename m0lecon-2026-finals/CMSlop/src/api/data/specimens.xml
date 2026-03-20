@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<herbarium>
+    <specimen>
+        <common_name>Silver Birch</common_name>
+        <species>Betula pendula</species>
+        <family>Betulaceae</family>
+        <genus>Betula</genus>
+        <location_found>Scottish Highlands</location_found>
+        <habitat>Open woodland, heathland</habitat>
+        <collected_date>2024-06-10</collected_date>
+        <collector>Field Team Alpha</collector>
+        <description>Elegant deciduous tree with distinctive white peeling bark. Pioneer species colonizing open ground. Leaves triangular with double-serrate margins.</description>
+        <preservation_method>Leaf press with bark sample</preservation_method>
+    </specimen>
+    <specimen>
+        <common_name>Wild Thyme</common_name>
+        <species>Thymus serpyllum</species>
+        <family>Lamiaceae</family>
+        <genus>Thymus</genus>
+        <location_found>Dorset chalk downs</location_found>
+        <habitat>Dry grassland, rocky slopes</habitat>
+        <collected_date>2024-07-03</collected_date>
+        <collector>Field Team Alpha</collector>
+        <description>Low-growing aromatic perennial forming dense mats. Tiny purple flowers attract numerous pollinators. Used historically as antiseptic.</description>
+        <preservation_method>Pressed and dried with flower</preservation_method>
+    </specimen>
+    <specimen>
+        <common_name>Bluebell</common_name>
+        <species>Hyacinthoides non-scripta</species>
+        <family>Asparagaceae</family>
+        <genus>Hyacinthoides</genus>
+        <location_found>Forest of Dean, Gloucestershire</location_found>
+        <habitat>Ancient deciduous woodland</habitat>
+        <collected_date>2024-04-28</collected_date>
+        <collector>Dr. E. Darwin</collector>
+        <description>Iconic spring bulb forming carpets of violet-blue nodding bells. Indicator species for ancient woodland. Protected under Wildlife and Countryside Act.</description>
+        <preservation_method>Pressed with silica gel desiccant</preservation_method>
+    </specimen>
+    <specimen>
+        <common_name>Meadowsweet</common_name>
+        <species>Filipendula ulmaria</species>
+        <family>Rosaceae</family>
+        <genus>Filipendula</genus>
+        <location_found>Somerset Levels</location_found>
+        <habitat>Wet meadows, riverbanks, ditches</habitat>
+        <collected_date>2024-07-15</collected_date>
+        <collector>Dr. E. Darwin</collector>
+        <description>Tall perennial with dense clusters of creamy-white fragrant flowers. Contains salicylic acid compounds, historically used to flavour mead. One of the sacred herbs of the druids.</description>
+        <preservation_method>Pressed and dried</preservation_method>
+    </specimen>
+    <specimen>
+        <common_name>Scots Pine</common_name>
+        <species>Pinus sylvestris</species>
+        <family>Pinaceae</family>
+        <genus>Pinus</genus>
+        <location_found>Cairngorms National Park</location_found>
+        <habitat>Caledonian pine forest remnants</habitat>
+        <collected_date>2024-09-01</collected_date>
+        <collector>Field Team Beta</collector>
+        <description>Native evergreen conifer with distinctive orange-red bark in upper crown. Paired blue-green needles. Keystone species of ancient Caledonian forest ecosystem.</description>
+        <preservation_method>Needle and cone specimen, resin-preserved</preservation_method>
+    </specimen>
+</herbarium>

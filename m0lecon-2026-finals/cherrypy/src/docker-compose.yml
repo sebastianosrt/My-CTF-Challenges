@@ -1,0 +1,8 @@
+services:
+  cherrypi:
+    build: .
+    ports:
+      - "1337:1337"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=1337

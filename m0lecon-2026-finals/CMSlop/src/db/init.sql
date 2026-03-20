@@ -1,0 +1,6 @@
+REVOKE ALL PRIVILEGES ON `herbarium`.* FROM 'herbarium'@'%';
+
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, ALTER, INDEX, DROP, REFERENCES
+    ON `herbarium`.* TO 'herbarium'@'%';
+
+FLUSH PRIVILEGES;

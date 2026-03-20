@@ -1,0 +1,41 @@
+version: "3.8"
+
+services:
+  api:
+    build:
+      context: ./api
+      args:
+        FLAG: ptm{c0ngr4tz_h0p3_y0u_l1k3d_th3_ch4in!_c32fe1e6b249503e}
+    environment:
+      DB_HOST: db
+      DB_PORT: "3306"
+      DB_NAME: herbarium
+      DB_USER: herbarium
+      DB_PASS: herbarium
+      JWT_SECRET: "6ffa84ff310a8f58c018529a5a532095d1a3a7f434e7f066ca34525c8d42aa4b"
+      ADMIN_PASSWORD: "cb559cfe0b673301e98b43ee4bc9ee83d2b23a3fe2873c460c7fad1b53182b31"
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "1337:80"
+    environment:
+      API_BASE_URL: "http://api:80"
+    depends_on:
+      - api
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: herbarium
+      MYSQL_USER: herbarium
+      MYSQL_PASSWORD: herbarium
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/99-permissions.sql:ro
+      - ./db/my.cnf:/etc/mysql/conf.d/security.cnf:ro
+
+volumes:
+  mysql_data:
+  uploads:

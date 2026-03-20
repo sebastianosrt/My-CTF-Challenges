@@ -1,0 +1,134 @@
+:root {
+  --bg0: #0a1219;
+  --bg1: #101c28;
+  --card: rgba(255, 255, 255, 0.08);
+  --stroke: rgba(255, 255, 255, 0.14);
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.68);
+  --accent: #ff6b3d;
+  --accent2: #55d6ff;
+
+  --font: "Avenir Next", "Segoe UI", "Trebuchet MS", sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: var(--font);
+  background: radial-gradient(1000px 720px at 20% 10%, #1c2d3b 0%, transparent 55%),
+    radial-gradient(760px 560px at 80% 15%, #192c2e 0%, transparent 55%),
+    linear-gradient(180deg, var(--bg0), var(--bg1));
+}
+
+.wrap {
+  height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.panel {
+  width: min(520px, 100%);
+  background: var(--card);
+  border: 1px solid var(--stroke);
+  border-radius: 20px;
+  padding: 18px;
+  backdrop-filter: blur(12px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.logo {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(255, 107, 61, 0.95), rgba(85, 214, 255, 0.9));
+  color: rgba(8, 12, 18, 0.92);
+  font-weight: 800;
+  letter-spacing: 0.4px;
+}
+
+.title {
+  font-weight: 760;
+  letter-spacing: 0.2px;
+  font-size: 20px;
+  line-height: 1.1;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.form {
+  display: grid;
+  gap: 12px;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+input {
+  width: 100%;
+  padding: 11px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(11, 18, 26, 0.52);
+  color: var(--text);
+  outline: none;
+}
+
+input:focus {
+  border-color: rgba(85, 214, 255, 0.6);
+}
+
+.btn {
+  appearance: none;
+  border: 1px solid rgba(255, 107, 61, 0.55);
+  background: linear-gradient(135deg, rgba(255, 107, 61, 0.75), rgba(85, 214, 255, 0.35));
+  color: rgba(255, 255, 255, 0.92);
+  padding: 11px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.error {
+  min-height: 16px;
+  color: rgba(251, 113, 133, 0.95);
+  font-size: 12px;
+}
+
+.hint {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+code {
+  font-family: var(--mono);
+  font-size: 12px;
+}

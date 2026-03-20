@@ -1,0 +1,41 @@
+services:
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf.template:/etc/nginx/templates/nginx.conf.template:ro
+    environment:
+      - SECRET=${SECRET}
+      - NGINX_ENVSUBST_OUTPUT_DIR=/etc/nginx
+    depends_on:
+      - chall
+    networks:
+      chall_netz:
+        aliases:
+          - "${SECRET}.app.chall.tld"
+          - "${SECRET}.flag.chall.tld"
+
+  chall:
+    build: ./src
+    command: ["node", "app.js"]
+    environment:
+      - SECRET=${SECRET}
+      - BOT_URL=http://bot:3001
+    networks:
+      - chall_netz
+
+  bot:
+    build: ./bot
+    command: ["node", "bot.js"]
+    environment:
+      - FLAG=ptm{pp_4nd_s0p_r3l4xx_1fd6d1f0c54205f065}
+      - SECRET=${SECRET}
+    depends_on:
+      - nginx
+      - chall
+    networks:
+      chall_netz:
+
+networks:
+  chall_netz:

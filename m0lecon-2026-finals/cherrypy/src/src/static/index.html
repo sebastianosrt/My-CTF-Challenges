@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CherryPi Dashboard</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="bg">
+      <div class="orb orb-a"></div>
+      <div class="orb orb-b"></div>
+      <div class="grid"></div>
+    </div>
+
+    <main class="shell">
+      <header class="header">
+        <div class="brand">
+          <div class="logo" aria-hidden="true">CP</div>
+          <div>
+            <div class="title">CherryPi</div>
+            <div class="subtitle">Tiny CherryPy dashboard</div>
+          </div>
+        </div>
+        <div class="header-actions">
+          <div class="status" id="status">Connecting...</div>
+          <button class="btn" type="button" id="logoutBtn">Logout</button>
+        </div>
+      </header>
+
+      <section class="card">
+        <h2>Dashboard</h2>
+        <p class="hint">Update the server-side config via <code>/api/config</code>.</p>
+
+        <form id="configForm" class="form" autocomplete="off">
+          <label>
+            <span>Refresh Interval (seconds)</span>
+            <input id="refresh_interval" type="number" min="1" max="300" step="1" />
+          </label>
+
+          <label>
+            <span>Theme</span>
+            <select id="theme">
+              <option value="sunrise">Sunrise</option>
+              <option value="ocean">Ocean</option>
+              <option value="mono">Mono</option>
+            </select>
+          </label>
+
+          <label class="toggle">
+            <input id="alerts_enabled" type="checkbox" />
+            <span class="toggle-ui" aria-hidden="true"></span>
+            <span>Alerts Enabled</span>
+          </label>
+
+          <label>
+            <span>Max Items</span>
+            <input id="max_items" type="number" min="1" max="200" step="1" />
+          </label>
+
+          <label class="wide">
+            <span>Banner Message</span>
+            <input id="banner_message" type="text" maxlength="80" placeholder="Shown on clients" />
+          </label>
+
+          <div class="actions">
+            <button class="btn primary" type="submit">Save</button>
+            <button class="btn" type="button" id="reloadBtn">Reload</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card">
+        <div class="row">
+          <h2>Current Server Config</h2>
+          <span class="pill" id="lastUpdate">Never</span>
+        </div>
+        <pre class="code" id="configView">Loading...</pre>
+      </section>
+
+      <footer class="footer">
+        <span>Server: <code id="apiBase">/api/config</code></span>
+        <span>Health: <code>/health</code></span>
+      </footer>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="/static/app.js"></script>
+  </body>
+</html>

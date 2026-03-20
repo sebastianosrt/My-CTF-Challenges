@@ -1,0 +1,1 @@
+A digital botanical specimen archive and Content Management Slop. Herbarium lets researchers catalog plant specimens, manage pages and tags, generate reports, and expose a public API.
