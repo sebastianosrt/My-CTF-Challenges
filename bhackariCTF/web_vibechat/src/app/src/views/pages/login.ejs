@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <%- include('../partials/head', {
+    title: 'Login',
+    stylesheet: '/static/css/login.css'
+  }) %>
+</head>
+<body>
+  <div class="card">
+    <h1>Login</h1>
+    <form method="POST" action="/login">
+      <label for="username">Username</label>
+      <input id="username" name="username" type="text" autocomplete="username" required>
+      <button type="submit">Enter</button>
+    </form>
+  </div>
+</body>
+</html>

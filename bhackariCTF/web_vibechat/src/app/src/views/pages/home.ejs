@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <%- include('../partials/head', {
+    title: 'Chat',
+    stylesheet: '/static/css/home.css'
+  }) %>
+</head>
+<body>
+  <header>
+    <h1>Hi, <%= username %></h1>
+    <button type="button" id="open-settings">Settings</button>
+  </header>
+
+  <main>
+    <section>
+      <ul id="chat-log"></ul>
+      <form id="chat-form">
+        <input id="chat-input" type="text" aria-label="Message" autocomplete="off" required>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <div id="settings-modal" aria-modal="true" role="dialog">
+    <div class="modal-card">
+      <h2>API Key</h2>
+      <p>Your API key lives in your session cookie.</p>
+      <form id="api-form" method="post" action="/">
+        <label for="api-key">Current key</label>
+        <input id="api-key" name="api-key" type="text" autocomplete="off" required>
+        <button id="submit-api-key-button" type="submit">Save</button>
+      </form>
+      <p>Active key: <code id="current-api-key"></code></p>
+      <button type="button" id="close-settings">Close</button>
+    </div>
+  </div>
+
+  <script id="vibechat-state" type="application/json" nonce="<%= cspNonce %>"><%- initialState %></script>
+  <script src="/vendor/purify.min.js" nonce="<%= cspNonce %>"></script>
+  <script src="/static/js/home.js" nonce="<%= cspNonce %>"></script>
+</body>
+</html>

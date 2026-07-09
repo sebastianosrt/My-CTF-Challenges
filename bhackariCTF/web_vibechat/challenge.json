@@ -1,0 +1,32 @@
+{
+  "title": "Vibechat",
+  "description": "Yet another vibecoded chat app.\n\nWebsite: [http://vibechat.challs.ctf.bhackari.it:3000](http://vibechat.challs.ctf.bhackari.it:3000)",
+  "authors": [
+    "Sebastiano Sartor <@sebsrt>"
+  ],
+  "tags": [
+    "web"
+  ],
+  "hiddenTags": [],
+  "order": 2,
+  "flags": [
+    "^bhackariCTF\\{9c0e3df9fa11b804567149355c18ee250b4af406127cef13\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": 30.0
+  },
+  "files": [
+    {
+      "name": "vibechat.zip",
+      "type": "upload",
+      "path": "./attachments/vibechat.zip",
+      "dynamic": false
+    }
+  ],
+  "hints": [],
+  "event": "bhackari CTF",
+  "section": "web"
+}

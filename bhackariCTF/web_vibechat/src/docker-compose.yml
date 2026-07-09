@@ -1,0 +1,9 @@
+services:
+  web:
+    build: ./app
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      COOKIE_SECURE: "false"
+      FLAG: bhackariCTF{9c0e3df9fa11b804567149355c18ee250b4af406127cef13}

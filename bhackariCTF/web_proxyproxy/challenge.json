@@ -1,0 +1,32 @@
+{
+  "title": "Proxyproxy",
+  "description": "nothing here pt. 2\n\nWebsite: [http://proxy.challs.ctf.bhackari.it:3002/](http://proxy.challs.ctf.bhackari.it:3002/)",
+  "authors": [
+    "Sebastiano Sartor <@sebsrt>"
+  ],
+  "tags": [
+    "web"
+  ],
+  "hiddenTags": [],
+  "order": 1,
+  "flags": [
+    "^bhackariCTF\\{ed7b8baf6bd6341f194a95394c1acd314cee7871de0eb67c\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": 30.0
+  },
+  "files": [
+    {
+      "name": "proxyproxy.zip",
+      "type": "upload",
+      "path": "./attachments/proxyproxy.zip",
+      "dynamic": false
+    }
+  ],
+  "hints": [],
+  "event": "bhackari CTF",
+  "section": "web"
+}

@@ -1,0 +1,32 @@
+{
+  "title": "Wake Up Call",
+  "description": "PHP is awesome!!\n\nWebsite: [http://wakeup.challs.ctf.bhackari.it:1337/](http://wakeup.challs.ctf.bhackari.it:1337/)",
+  "authors": [
+    "Sebastiano Sartor <@sebsrt>"
+  ],
+  "tags": [
+    "web"
+  ],
+  "hiddenTags": [],
+  "order": 3,
+  "flags": [
+    "^bhackariCTF\\{c0ngr4tz_f0r_unl0ck1ng_th3_fl4g_st0r3!_f8ea7eb2485c0bbca52d50e7dedf18ff88510bac615b66e309205e6989c01ad2\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": 30.0
+  },
+  "files": [
+    {
+      "name": "wake_up_call.zip",
+      "type": "upload",
+      "path": "./attachments/wake_up_call.zip",
+      "dynamic": false
+    }
+  ],
+  "hints": [],
+  "event": "bhackari CTF",
+  "section": "web"
+}

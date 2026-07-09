@@ -1,0 +1,21 @@
+{
+  "name": "vibechat-express-app",
+  "version": "1.0.0",
+  "description": "Simple Express app with login flow, JSONP endpoint, and chat UI.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node -c server.js && find src public -name '*.js' -print0 | xargs -0 -n1 node -c"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "dompurify": "^3.4.5",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "puppeteer": "^25.0.4"
+  }
+}

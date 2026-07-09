@@ -1,0 +1,10 @@
+services:
+  web:
+    build: .
+    container_name: wake-up-call-ctf
+    ports:
+      - "1337:80"
+    environment:
+      - FLAG=bhackariCTF{c0ngr4tz_f0r_unl0ck1ng_th3_fl4g_st0r3!_f8ea7eb2485c0bbca52d50e7dedf18ff88510bac615b66e309205e6989c01ad2}
+      - APACHE_RUN_USER=www-data
+      - APACHE_RUN_GROUP=www-data

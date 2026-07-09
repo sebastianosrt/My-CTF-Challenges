@@ -1,0 +1,15 @@
+services:
+  backend:
+    build: ./backend
+    environment:
+      - FLAG=bhackariCTF{ed7b8baf6bd6341f194a95394c1acd314cee7871de0eb67c}
+
+  proxy:
+    build:
+      args:
+        APP_REPO: https://github.com/lighttpd/lighttpd1.4
+      context: ./proxy
+    depends_on:
+      - backend
+    ports:
+      - "3002:80"

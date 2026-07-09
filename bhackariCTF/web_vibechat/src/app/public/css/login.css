@@ -1,0 +1,43 @@
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #0f172a;
+  color: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.card {
+  background: #1e293b;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 40px rgba(15, 23, 42, 0.6);
+  width: 320px;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: none;
+  margin-bottom: 1rem;
+}
+
+button {
+  width: 100%;
+  padding: 0.85rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: #38bdf8;
+  color: #0f172a;
+  font-weight: 700;
+  cursor: pointer;
+}
